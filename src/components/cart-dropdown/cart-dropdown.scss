@@ -8,11 +8,11 @@
   border: 1px solid black;
   background: white;
   top: 80px;
-  right: 0;
+  right: 60px;
   z-index: 5;
 
   .cart-items {
-    height: 240px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     overflow: scroll;
