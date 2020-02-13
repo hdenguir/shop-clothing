@@ -11,6 +11,8 @@ import ShopPage from './pages/shop/shoppage';
 import LoginRegister from './pages/auth/login-register';
 import Header from './components/header/header';
 import Checkout from './pages/checkout/checkout';
+import Contact from './pages/contact/contact';
+import NotFound from './pages/notfound/notfound';
 
 import './App.css';
 
@@ -43,12 +45,14 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route path="/checkout" component={Checkout} />
+          <Route path="/contact" component={Contact} />
           <Route
             path="/signin"
             render={() =>
               this.props.currentUser ? <Redirect to="/" /> : <LoginRegister />
             }
           />
+          <Route component={NotFound} />
         </Switch>
       </div>
     );
