@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import Logo from '../../assets/logo.png';
 import './header.scss';
 import { auth } from '../../firebase/firebase.utils';
 import { connect } from 'react-redux';
@@ -13,7 +13,7 @@ import { createStructuredSelector } from 'reselect';
 const Header = ({ currentUser, hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
-      <Logo className="logo" />
+      <img src={Logo} alt="Shop Clothes" className="logo" />
     </Link>
     <div className="options">
       <Link className="option" to="/shop">
