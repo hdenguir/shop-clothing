@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
-import { createStructuredSelector } from 'reselect';
 
-import HomePage from './pages/homepage';
+import HomePage from './pages/home/homepage';
 import ShopPage from './pages/shop/shoppage';
 import LoginRegister from './pages/auth/login-register';
 import Header from './components/header/header';
@@ -21,16 +22,19 @@ class App extends Component {
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot(snapshot => {
-          setCurrentUser({ id: snapshot.id, ...snapshot.data() });
-        });
-      } else {
-        setCurrentUser(userAuth);
-      }
-    });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(
+      async userAuth => {
+        if (userAuth) {
+          const userRef = await createUserProfileDocument(userAuth);
+          userRef.onSnapshot(snapshot => {
+            setCurrentUser({ id: snapshot.id, ...snapshot.data() });
+          });
+        } else {
+          setCurrentUser(userAuth);
+        }
+      },
+      error => console.log(error)
+    );
   }
 
   componentWillUnmount() {
