@@ -8,12 +8,12 @@ import withSpinner from '../with-spinner/with-spinner';
 import CollectionsOverview from './collections-overview';
 
 const mapStateToProps = createStructuredSelector({
-  isLoading: selectIsCollectionFetching
+  isLoading: selectIsCollectionFetching,
 });
 
 const CollectionsOverviewContainer = compose(
   connect(mapStateToProps),
-  withSpinner
+  withSpinner,
 )(CollectionsOverview);
 
 export default CollectionsOverviewContainer;

@@ -17,19 +17,23 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  if (process.env.NODE_ENV === 'production') {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  } else {
+    res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+  }
 });
 
 app.post('/payment', (req, res) => {
   const {
     token: { id },
-    amount
+    amount,
   } = req.body;
   try {
     const body = {
       source: id,
       amount: amount,
-      currency: 'usd'
+      currency: 'usd',
     };
 
     stripe.charges.create(body, (stripeErr, stripeRes) => {
@@ -45,6 +49,6 @@ app.post('/payment', (req, res) => {
 });
 
 app.listen(PORT, err => {
-  if (err) throw err;
+  if (err) console.log(err); // throw err;
   console.log('Server running on port ' + PORT);
 });

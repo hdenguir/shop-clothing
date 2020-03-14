@@ -3,7 +3,13 @@ import './collection-preview.scss';
 import CollectionItem from '../collection-item/collection-item';
 import { withRouter } from 'react-router-dom';
 
-const CollectionPreview = ({ title, items, routeName, history, match }) => {
+const CollectionPreview = ({
+  title,
+  items,
+  routeName,
+  history,
+  match,
+}) => {
   return (
     <div className="collection-preview">
       <h1
@@ -15,7 +21,7 @@ const CollectionPreview = ({ title, items, routeName, history, match }) => {
       <div className="preview">
         {items
           .filter((item, idx) => idx < 4)
-          .map(item => (
+          .map((item) => (
             <CollectionItem key={item.id} item={item} />
           ))}
       </div>

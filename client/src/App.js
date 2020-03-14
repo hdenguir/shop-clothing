@@ -21,7 +21,7 @@ const App = ({ checkUserSession, currentUser }) => {
     checkUserSession();
   }, [checkUserSession]);
   return (
-    <div className="">
+    <>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -34,12 +34,12 @@ const App = ({ checkUserSession, currentUser }) => {
         />
         <Route component={NotFound} />
       </Switch>
-    </div>
+    </>
   );
 };
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
 export default connect(mapStateToProps, { checkUserSession })(App);

@@ -7,7 +7,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 
 import App from './App';
-
 import './index.css';
 
 ReactDOM.render(
@@ -18,5 +17,5 @@ ReactDOM.render(
       </PersistGate>
     </BrowserRouter>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
