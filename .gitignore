@@ -8,7 +8,7 @@
 yarn.lock
 client/yarn.lock
 
-# testing
+# testing 
 /coverage
 
 # production
@@ -25,3 +25,4 @@ client/yarn.lock
 /client/npm-debug.log*
 /client/yarn-debug.log*
 /client/yarn-error.log*
+yarn.lock
