@@ -30,7 +30,9 @@ const App = ({ checkUserSession, currentUser }) => {
         <Route path="/contact" component={Contact} />
         <Route
           path="/signin"
-          render={() => (currentUser ? <Redirect to="/" /> : <LoginRegister />)}
+          render={() =>
+            currentUser ? <Redirect to="/" /> : <LoginRegister />
+          }
         />
         <Route component={NotFound} />
       </Switch>

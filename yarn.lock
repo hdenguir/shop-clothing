@@ -509,11 +509,6 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-error-handler@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-error-handler/-/react-error-handler-1.1.0.tgz#0545bc15fd229381b549e40ec83bbd319ae39247"
-  integrity sha512-m0d/sf5BGbH3BU+R0gzUt6WIInPkL0wT3d42FlSuW8xv2H46E3Q5/Jjwj+kCxcK+iePGYlrKyIabQ2r7jjtrpg==
-
 read-pkg@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-4.0.1.tgz#963625378f3e1c4d48c85872b5a6ec7d5d093237"
@@ -653,10 +648,10 @@ strip-ansi@^5.0.0, strip-ansi@^5.1.0, strip-ansi@^5.2.0:
   dependencies:
     ansi-regex "^4.1.0"
 
-stripe@^8.19.0:
-  version "8.19.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.19.0.tgz#dc75bfb88a53dad0418d227e4d597ca0c1e7f96b"
-  integrity sha512-XjYz1YFt0YkbEpp2Hq+9iNubbvWaHRsuYNdzxBgdi7CCJbwzOvxUHQRFnqhl882/1RucyiCiqkO8XAnz+9Qe9g==
+stripe@^8.32.0:
+  version "8.32.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.32.0.tgz#0f034e8f29379a6e7552f0e00472df449c5e8ef5"
+  integrity sha512-38saMK54VCgVZO9vn1kZFRZQH1+S4Y09e9vdbilNXHuVPD6S66ISiDpnaKLDjrl8QxKWCmNjDWnarJQSxETYGA==
   dependencies:
     "@types/node" ">=8.1.0"
     qs "^6.6.0"

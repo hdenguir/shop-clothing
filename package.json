@@ -19,8 +19,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "react-error-handler": "^1.1.0",
-    "stripe": "^8.19.0"
+    "stripe": "^8.32.0"
   },
   "engines": {
     "node": "10.16.3",
